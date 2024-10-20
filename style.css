@@ -108,7 +108,7 @@ body {
 /* Styles for Full HD Mobile Phones (up to 1080px width) */
 @media (max-width: 1080px) {
   #showButton {
-    padding: 8px 16px; /* Adjust padding */
+    padding: 12px 16px; /* Adjust padding */
     font-size: 14px; /* Slightly larger font size for Full HD phones */
   }
 
@@ -128,3 +128,4 @@ body {
     z-index: 5; /* Below the message */
   }
 }
+
