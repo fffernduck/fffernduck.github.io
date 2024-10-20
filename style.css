@@ -105,24 +105,23 @@ body {
   }
 }
 
-/* Styles for Mobile Phones (up to 480px width) */
-@media (max-width: 480px) {
+@media (max-width: 1080px) {
   #showButton {
-    padding: 6px 12px; /* Even smaller padding */
-    font-size: 12px; /* Smaller font size */
+    padding: 8px 16px; /* Adjust padding */
+    font-size: 14px; /* Slightly larger font size for Full HD phones */
   }
 
   #message {
-    font-size: 16px; /* Smaller font size */
-    margin-bottom: 30px; /* Adds smaller space for mobile */
+    font-size: 18px; /* Larger font size for better readability */
+    margin-bottom: 40px; /* Adds more space between message and image */
   }
 
   #image1, #image2, #image3, #image4 {
-    max-width: 60%; /* Limit image size to 60% of the screen width on large screens */
-    top: calc(100px + 150px); /* Add extra spacing for desktop screens */
+    max-width: 80%; /* Limit image size to 80% of the screen width */
+    top: calc(100px + 100px); /* Add spacing between message and image */
     left: 50%;
     transform: translateX(-50%);
-    max-height: calc(100vh - 300px); /* Ensure the image height fits within the viewport, leaving space for message */
+    max-height: calc(100vh - 250px); /* Ensure the image height fits within the viewport, leaving space for the message */
     height: auto;
     object-fit: contain; /* Ensure the image scales correctly */
     z-index: 5; /* Below the message */
