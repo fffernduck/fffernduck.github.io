@@ -146,9 +146,9 @@ Letter.prototype.step = function () {
         this.shards = [];
 
         var shardCount =
-            (opts.fireworkBaseShards +
-              opts.fireworkAddedShards * Math.random()) |
-            0,
+          (opts.fireworkBaseShards +
+            opts.fireworkAddedShards * Math.random()) |
+          0,
           angle = Tau / shardCount,
           cos = Math.cos(angle),
           sin = Math.sin(angle),
@@ -369,11 +369,11 @@ for (var i = 0; i < opts.strings.length; ++i) {
       new Letter(
         opts.strings[i][j],
         j * opts.charSpacing +
-          opts.charSpacing / 2 -
-          (opts.strings[i].length * opts.charSize) / 2,
+        opts.charSpacing / 2 -
+        (opts.strings[i].length * opts.charSize) / 2,
         i * opts.lineHeight +
-          opts.lineHeight / 2 -
-          (opts.strings.length * opts.lineHeight) / 2
+        opts.lineHeight / 2 -
+        (opts.strings.length * opts.lineHeight) / 2
       )
     );
   }
@@ -389,3 +389,68 @@ window.addEventListener("resize", function () {
 
   ctx.font = opts.charSize + "px Verdana";
 });
+
+
+
+
+// const showButton = document.getElementById('showButton');
+//const message = document.getElementById('message');
+//const birthdayImage = document.getElementById('birthdayImage');  // Add reference to the image
+
+// Show the button after 5 seconds
+//setTimeout(function () {
+//  showButton.style.display = 'block'; // Show the button after 5 seconds
+//}, 5000);
+
+// Button click handler to show the message, image, and start animation
+//showButton.addEventListener('click', function () {
+//  showButton.style.display = 'none';   // Hide the button after it's clicked
+//  message.style.display = 'block';     // Show the message
+//  birthdayImage.style.display = 'block'; // Show the image
+
+  // Start the animation (assuming `anim` is your animation function)
+  //anim();
+//});
+
+const showButton = document.getElementById('showButton');
+const message = document.getElementById('message');
+const birthdaySong = document.getElementById('birthdaySong');
+
+// Image references
+const image1 = document.getElementById('image1');
+const image2 = document.getElementById('image2');
+const image3 = document.getElementById('image3');
+const image4 = document.getElementById('image4');
+
+// Show the button after 5 seconds
+setTimeout(function () {
+  showButton.style.display = 'block'; // Show the button after 5 seconds
+ }, 5000); 
+
+// Button click handler to show the message, images, and start animation
+showButton.addEventListener('click', function () {
+  showButton.style.display = 'none';     // Hide the button after it's clicked
+  message.style.display = 'block';       // Show the message
+  birthdaySong.play();                   // Play the birthday song
+
+  // Show images with a delay of 3 seconds between them
+  setTimeout(() => {
+    image1.style.display = 'block';      // Show image 1
+  }, 0);
+
+  setTimeout(() => {
+    image1.style.display = 'none';       // Hide image 1
+    image2.style.display = 'block';      // Show image 2
+  }, 4000); // After 3 seconds
+
+  setTimeout(() => {
+    image2.style.display = 'none';       // Hide image 2
+    image3.style.display = 'block';      // Show image 3
+  }, 8000); // After 6 seconds
+
+  setTimeout(() => {
+    image3.style.display = 'none';       // Hide image 3
+    image4.style.display = 'block';      // Show image 4 and keep it visible
+  }, 12000); // After 9 seconds
+});
+

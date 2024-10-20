@@ -6,3 +6,91 @@ canvas {
 body {
   overflow: hidden;
 }
+
+
+
+
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Hide the button initially */
+#showButton {
+  display: none; /* Initially hidden */
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f9fc53;
+  color: rgb(11, 1, 1);
+  border: none;
+  border-radius: 5px;
+  z-index: 10; /* Ensure it's on top of the canvas */
+}
+
+
+
+
+/* Styling the message */
+#message {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: 'Verdana', sans-serif;
+  z-index: 10; /* Ensure it's on top of the canvas */
+  display: none; /* Initially hidden */
+}
+
+/* Styling the image */
+#image1 {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 150px; /* Adjust this value based on your text height */
+  left: 50%;
+  transform: translateX(-50%);
+
+  max-width: 300px; /* Adjust the width if needed */
+  z-index: 10; /* Ensure it's on top of the canvas */
+}
+#image2 {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 150px; /* Adjust this value based on your text height */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  z-index: 10; /* Ensure it's on top of the canvas */
+}
+#image3 {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 150px; /* Adjust this value based on your text height */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it's on top of the canvas */
+}
+#image4 {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 150px; /* Adjust this value based on your text height */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px; /* Adjust the width if needed */
+  z-index: 10; /* Ensure it's on top of the canvas */
+}
