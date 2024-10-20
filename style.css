@@ -1,30 +1,20 @@
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-body {
-  overflow: hidden;
-}
-
-
-
-
-
+/* Canvas for background */
 canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0; /* Ensure it's behind everything */
 }
 
+/* Body adjustments */
 body {
   margin: 0;
   overflow: hidden;
 }
 
-/* Hide the button initially */
+/* Button */
 #showButton {
   display: none; /* Initially hidden */
   position: absolute;
@@ -41,10 +31,7 @@ body {
   z-index: 10; /* Ensure it's on top of the canvas */
 }
 
-
-
-
-/* Styling the message */
+/* Message styling */
 #message {
   position: absolute;
   top: 50px;
@@ -53,44 +40,91 @@ body {
   text-align: center;
   color: white;
   font-family: 'Verdana', sans-serif;
-  z-index: 10; /* Ensure it's on top of the canvas */
+  z-index: 20; /* Ensure it's on top of the canvas and images */
   display: none; /* Initially hidden */
+  font-size: 18px;
+  margin-bottom: 150px; /* Adds space between message and image */
 }
 
-/* Styling the image */
-#image1 {
-  display: none; /* Initially hidden */
-  position: absolute;
-  top: 150px; /* Adjust this value based on your text height */
-  left: 50%;
-  transform: translateX(-50%);
+/* Responsive Images */
+#image1, #image2, #image3, #image4 {
 
-  max-width: 300px; /* Adjust the width if needed */
-  z-index: 10; /* Ensure it's on top of the canvas */
-}
-#image2 {
   display: none; /* Initially hidden */
   position: absolute;
-  top: 150px; /* Adjust this value based on your text height */
+  max-width: 90%; /* Ensure the images are responsive and fit within 90% of the viewport width */
+  max-height: calc(100vh - 150px);
   left: 50%;
   transform: translateX(-50%);
-  
-  z-index: 10; /* Ensure it's on top of the canvas */
+  max-width: 100%; /* Make sure images don’t exceed 100% of the container width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 5; /* Below the message */
+  bottom: 50px; /* Control the bottom margin of the image to prevent overlap with other elements */
+  object-fit: contain; /* Ensure the image fits well within its container */
 }
-#image3 {
-  display: none; /* Initially hidden */
-  position: absolute;
-  top: 150px; /* Adjust this value based on your text height */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10; /* Ensure it's on top of the canvas */
+
+/* Desktop-specific (Large Screens) */
+@media (min-width: 1025px) {
+  #image1, #image2, #image3, #image4 {
+    max-width: 60%; /* Limit image size to 60% of the screen width on large screens */
+    top: calc(100px + 150px); /* Add extra spacing for desktop screens */
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 300px); /* Ensure the image height fits within the viewport, leaving space for message */
+    height: auto;
+    object-fit: contain; /* Ensure the image scales correctly */
+    z-index: 5; /* Below the message */
+  }
+
+  #message {
+    font-size: 22px; /* Larger font size for desktop */
+  }
 }
-#image4 {
-  display: none; /* Initially hidden */
-  position: absolute;
-  top: 150px; /* Adjust this value based on your text height */
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 300px; /* Adjust the width if needed */
-  z-index: 10; /* Ensure it's on top of the canvas */
+
+/* Styles for Tablets (up to 1024px width) */
+
+@media (max-width: 1024px) {
+  #showButton {
+    padding: 8px 16px; /* Smaller padding for smaller screens */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  #message {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    margin-bottom: 50px; /* Adds space between the message and the images */
+  }
+
+  #image1, #image2, #image3, #image4 {
+    max-width: 60%; /* Limit image size to 60% of the screen width on large screens */
+    top: calc(100px + 150px); /* Add extra spacing for desktop screens */
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 300px); /* Ensure the image height fits within the viewport, leaving space for message */
+    height: auto;
+    object-fit: contain; /* Ensure the image scales correctly */
+    z-index: 5; /* Below the message */
+  }
+}
+
+/* Styles for Mobile Phones (up to 480px width) */
+@media (max-width: 480px) {
+  #showButton {
+    padding: 6px 12px; /* Even smaller padding */
+    font-size: 12px; /* Smaller font size */
+  }
+
+  #message {
+    font-size: 16px; /* Smaller font size */
+    margin-bottom: 30px; /* Adds smaller space for mobile */
+  }
+
+  #image1, #image2, #image3, #image4 {
+    max-width: 60%; /* Limit image size to 60% of the screen width on large screens */
+    top: calc(100px + 150px); /* Add extra spacing for desktop screens */
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 300px); /* Ensure the image height fits within the viewport, leaving space for message */
+    height: auto;
+    object-fit: contain; /* Ensure the image scales correctly */
+    z-index: 5; /* Below the message */
+  }
 }
